@@ -8,3 +8,5 @@ __pycache__/
 roles/
 vector-role/
 lighthouse-role/
+
+.idea/

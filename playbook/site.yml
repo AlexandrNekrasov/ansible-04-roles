@@ -1,0 +1,22 @@
+---
+- name: Install ClickHouse
+  hosts: clickhouse
+  become: true
+  roles:
+    - role: clickhouse
+      vars:
+        clickhouse_version: "22.3.3.44"
+        clickhouse_dbs_custom:
+          - { name: logs }
+
+- name: Install Vector
+  hosts: vector
+  become: true
+  roles:
+    - role: vector-role
+
+- name: Install Lighthouse
+  hosts: lighthouse
+  become: true
+  roles:
+    - role: lighthouse-role
